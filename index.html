@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgroReview</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo">🌾 AgroReview</div>
+  <div class="nav-links">
+    <a href="index.html">Review</a>
+    <a href="contact.html">Contact</a>
+    <button onclick="logout()">Logout</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>Future of Farm Reviews</h1>
+  <p>Rate machines & services with trust</p>
+</header>
+
+<main class="app">
+
+<section>
+<h3>Select Equipment</h3>
+<div class="grid">
+  <div class="card" data-eq="Tractor">🚜 Tractor<span>✔</span></div>
+  <div class="card" data-eq="Harvester">🌾 Harvester<span>✔</span></div>
+  <div class="card" data-eq="Sprayer">💧 Sprayer<span>✔</span></div>
+  <div class="card" data-eq="Repair">🔧 Repair<span>✔</span></div>
+</div>
+</section>
+
+<section>
+<h3>Your Rating</h3>
+<div class="stars">
+  <span data-star="1">★</span>
+  <span data-star="2">★</span>
+  <span data-star="3">★</span>
+  <span data-star="4">★</span>
+  <span data-star="5">★</span>
+</div>
+</section>
+
+<section>
+<h3>Write Review</h3>
+<textarea id="review" placeholder="How was the service, machine condition, timing…"></textarea>
+</section>
+
+<section>
+<h3>Add Images</h3>
+<input type="file" id="images" multiple accept="image/*">
+</section>
+
+</main>
+
+<button class="fab" id="submit">Submit Review</button>
+
+<script src="app.js"></script>
+<script>
+if(localStorage.getItem("loggedIn")!=="true")location.href="login.html";
+function logout(){localStorage.removeItem("loggedIn");location.href="login.html";}
+</script>
+
+</body>
+</html>
